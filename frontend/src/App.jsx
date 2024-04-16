@@ -1,9 +1,16 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignUp from "./pages/auth/SignUp";
 
 const App = () => {
   return (
-    <div className=' text-3xl text-red-500 underline'>App</div>
-  )
-}
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/register" element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
+  </>
+);
+};
 
 export default App
