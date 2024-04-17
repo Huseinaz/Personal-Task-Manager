@@ -7,19 +7,16 @@ const App = () => {
   const token = localStorage.getItem("token");
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SignIn />} />
-          <Route path="/register" element={<SignUp />} />
-        </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
         {token && (
-          <Routes>
-            <Route path="/home" element={<Home />} />
-          </Routes>
+          <Route path="/home" element={<Home />} />
         )}
-      </BrowserRouter>
-    </>
+        <Route path="*" element={<SignIn />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
